@@ -11,13 +11,13 @@ echo "Targets 1 & 2 deployed"
 
 echo "Deploying Splitter"
 
-docker run -d --hostname splitter --net cribl_assignment --name splitter test_nodeapp_splitter:latest
+docker run -d --hostname splitter --net cribl_assignment --name splitter sandeep173254/assignment:test_nodeapp_splitter
 
 echo "Splitter  deployed"
 
 echo "Deploying Agent"
 
-docker run --hostname agent --net cribl_assignment --name splitter test_nodeapp_agent:latest
+docker run --hostname agent --net cribl_assignment --name agent sandeep173254/assignment:test_nodeapp_agent
 
 echo "Count Target_1 event.log"
 docker exec -it target_1 sh -c cat events.log | wc -l
