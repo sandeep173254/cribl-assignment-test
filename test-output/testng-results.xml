@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-07-01T00:55:52Z" name="Default suite" finished-at="2021-07-01T00:55:52Z" duration-ms="20">
+    <groups>
+    </groups>
+    <test started-at="2021-07-01T00:55:52Z" name="Default test" finished-at="2021-07-01T00:55:52Z" duration-ms="20">
+      <class name="cribl.assignment.test.TargetFileValidationTests">
+        <test-method is-config="true" signature="verifyTargetFilePresent()[pri:0, instance:cribl.assignment.test.TargetFileValidationTests@63f8276e]" started-at="2021-07-01T00:55:52Z" name="verifyTargetFilePresent" finished-at="2021-07-01T00:55:52Z" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTargetFilePresent -->
+        <test-method signature="verifyFileCount()[pri:0, instance:cribl.assignment.test.TargetFileValidationTests@63f8276e]" started-at="2021-07-01T00:55:52Z" name="verifyFileCount" description="Verify file count for both Target " finished-at="2021-07-01T00:55:52Z" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFileCount -->
+      </class> <!-- cribl.assignment.test.TargetFileValidationTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
