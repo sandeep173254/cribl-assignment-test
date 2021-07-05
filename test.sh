@@ -24,12 +24,12 @@ echo "Deploying Automated Test container"
 docker run -t -d --hostname automatedtests --net cribl_assignment --name automatedtests sandeep173254/assignment:automatedtests
 
 echo "Copying files to Test Automation container"
-docker cp agent:/agent/inputs/large_1M_events.log .
+docker cp agent:/Users/skhatri/Downloads/assignment/agent/inputs/large_1M_events.log .
 docker cp large_1M_events.log automatedtests:/src/main/resources/input_file.log
-docker cp target_1:/events.log .
+docker cp target_1:/Users/skhatri/Downloads/assignment/target/events.log .
 docker cp events.log automatedtests:/src/main/resources/target_1-events.log
 rm events.log
-docker cp target_2:/events.log .
+docker cp target_2:/Users/skhatri/Downloads/assignment/target/events.log .
 docker cp events.log automatedtests:/src/main/resources/target_2-events.log
 
 
