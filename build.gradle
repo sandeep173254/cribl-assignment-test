@@ -11,7 +11,6 @@ plugins {
     id 'java'
     id 'eclipse'
     // Apply the application plugin to add support for building a CLI application
-    id 'application'
 }
 
 repositories {
@@ -21,21 +20,35 @@ repositories {
 }
 
 dependencies {
-    // This dependency is used by the application.
+    
     implementation 'com.google.guava:guava:28.0-jre'
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.0'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.0'
-
-    // Use TestNG framework, also requires calling test.useTestNG() below
-    testImplementation 'org.testng:testng:6.14.3'
-}
-
-application {
-    // Define the main class for the application
-    mainClassName = 'cribl.assignment.test.App'
+	implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'org.testng', name: 'testng', version: '6.14.3'
 }
 
 test {
     // Use TestNG for unit tests
     useTestNG()
 }
+
+jar {
+    archiveName = "CriblAssignment.jar"
+    
+    manifest {
+        attributes ("Main-Class": 'org.testng.TestNG')
+    }
+    
+    dependsOn configurations.compile
+    from {
+        (configurations.compile).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    } {
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
+}
+

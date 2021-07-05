@@ -1,4 +1,4 @@
-package cribl.assignment.test;
+package cribl.assignment.util;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
