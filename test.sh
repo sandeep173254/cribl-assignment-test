@@ -35,7 +35,7 @@ docker cp events.log automatedtests:/src/main/resources/target_2-events.log
 
 echo "Starting automation test suite"
 
-docker exec -it automatedtests java -jar opt/assignment/CriblAssignment.jar opt/assignment/testng.xml
+docker exec automatedtests java -jar opt/assignment/CriblAssignment.jar opt/assignment/testng.xml
 
 
 
