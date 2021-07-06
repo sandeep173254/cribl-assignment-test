@@ -18,8 +18,8 @@ public class TargetFileValidationTests {
 	private File input_file;
 	private int target1_count;
 	private int target2_count;
-	public static final String FILE_DIRECTORY = "/opt/assignment/src/main/resources/";
-	public static final int FILE_COUNT = 1000000;
+	private static final String FILE_DIRECTORY = "/opt/assignment/src/main/resources/";
+	private static final int FILE_COUNT = 1000000;
 	FileOperations fo = new FileOperations();
 	
 	
