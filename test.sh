@@ -83,3 +83,5 @@ docker rm target_2
 docker rm splitter
 docker stop agent
 docker rm agent
+docker stop automatedtests
+docker rm automatedtests

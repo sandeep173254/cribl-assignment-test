@@ -69,6 +69,7 @@ public class FileOperations {
                     String line2=bf2.readLine();
                 	if (!line.equalsIgnoreCase(line2)) {
                     	verifyFileDataMatches=false;
+                    	return verifyFileDataMatches;
                         
                     }
                 }
