@@ -1,8 +1,6 @@
 package cribl.assignment.test;
 
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-
 import cribl.assignment.util.FileOperations;
 import cribl.assignment.util.RetryAnalyzer;
 
@@ -18,6 +16,7 @@ public class TargetFileValidationTests {
 	private File target1_file;
 	private File target2_file;
 	private File input_file;
+	public static final String FILE_DIRECTORY = "src/main/resources/";
 	FileOperations fo = new FileOperations();
 	
 	
@@ -28,26 +27,20 @@ public class TargetFileValidationTests {
 	@BeforeSuite(alwaysRun=true)
 	public void verifyTargetFilePresent() throws Exception
 	{
+		boolean files_exist=false;
 		System.out.println("*****Before Suite Setup*****");
 		System.out.println("Verifying Target Files are present");
-		String target_1fileName="target_1-events.log";
-		String target_2fileName="target_2-events.log";
-		String input_fileName="input_file.log";
-		ClassLoader classLoader = getClass().getClassLoader();
-		target1_file = new File(classLoader.getResource(target_1fileName).getFile());
-		target2_file = new File(classLoader.getResource(target_2fileName).getFile());
-		input_file = new File(classLoader.getResource(input_fileName).getFile());
+		target1_file = new File(FILE_DIRECTORY+"target_1-events.log");
+		target2_file = new File(FILE_DIRECTORY+"target_2-events.log");
+		input_file = new File(FILE_DIRECTORY+"input_file.log");
 		
 		String target1_absolutePath = target1_file.getAbsolutePath();
 		String target2_absolutePath = target2_file.getAbsolutePath();
+		String input_file_absolutePath = input_file.getAbsolutePath();
 		
-
-		System.out.println(target1_absolutePath);
-		System.out.println(target2_absolutePath);
-		
-
 		Assert.assertTrue(target1_absolutePath.endsWith("/target_1-events.log"));
 		Assert.assertTrue(target2_absolutePath.endsWith("/target_2-events.log"));
+		Assert.assertTrue(input_file_absolutePath.endsWith("/input_file.log"));
 	}
 		
 		
@@ -79,8 +72,9 @@ public class TargetFileValidationTests {
 	@Test(enabled=true ,singleThreaded=true,description = "Verify File Data Input/Output Match ")
 	public void verifyFileDataInputOutput() throws IOException
 	{
-		//File output_file = fo.fileMerge(target1_file,target2_file);
-		boolean file_match = fo.checkFileDataMatches();
+		File output_file = fo.fileMerge(target1_file,target2_file);
+		System.out.print(input_file.getAbsolutePath()+"Output Merged File"+output_file.getAbsolutePath());
+		boolean file_match = fo.checkFileDataMatches(input_file,output_file);
 		Assert.assertTrue(file_match);
 	}
 	
