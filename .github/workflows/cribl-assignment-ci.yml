@@ -27,9 +27,10 @@ jobs:
       - name: Application Setup Deployment And Teardown and Test Execution
         run: . ./test.sh
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action/composite@v1
+        uses: actions/upload-artifact@v2-preview
         if: always()
         with:
+          name: 'test-report'
           files: test-output/testng-results.xml
 
       

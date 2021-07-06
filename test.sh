@@ -70,8 +70,6 @@ docker exec target_2 sh -c "cat events.log | wc -l"
 
 echo "Fetching test results"
 
-pwd
-ls -lrt
 docker cp automatedtests:/test-output .
 
 
