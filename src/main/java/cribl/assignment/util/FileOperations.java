@@ -13,7 +13,7 @@ public class FileOperations {
 	
 	public File fileMerge(File target1_file, File target2_file) throws IOException
 	{
-		PrintWriter pw = new PrintWriter("src/main/resources/output_events.log");
+		PrintWriter pw = new PrintWriter("opt/assignment/src/main/resources/output_events.log");
         BufferedReader reader = new BufferedReader(new FileReader(target1_file));
           
         String line = reader.readLine();
@@ -42,7 +42,7 @@ public class FileOperations {
         pw.close();
           
         System.out.println("Merged Target file 1 and Target file 2 into output_events.log");
-		return new File("src/main/resources/output_events.log");
+		return new File("opt/assignment/src/main/resources/output_events.log");
 	}
 	
 	public int getFileCount(File fileName) throws IOException

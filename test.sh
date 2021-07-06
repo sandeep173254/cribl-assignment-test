@@ -21,7 +21,7 @@ docker run -d --hostname agent --net cribl_assignment --name agent sandeep173254
 
 echo "Deploying Automated Test container"
 
-docker run -t -d --hostname automatedtests --net cribl_assignment --name automatedtests sandeep173254/assignment:automatedtests
+docker run -t -d --hostname automatedtests --net cribl_assignment --name automatedtests sandeep173254/assignment:automatedtests1
 
 echo "Copying files to Test Automation container"
 docker cp agent:/Users/skhatri/Downloads/assignment/agent/inputs/large_1M_events.log .
@@ -52,3 +52,5 @@ docker stop splitter
 docker rm target_1
 docker rm target_2
 docker rm splitter
+docker stop agent
+docker rm agent
