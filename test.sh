@@ -71,8 +71,7 @@ docker exec target_2 sh -c "cat events.log | wc -l"
 echo "Fetching test results"
 
 docker cp automatedtests:/test-output .
-mkdir test-output/artifacts
-docker cp automatedtests:/opt/assignment/src/main/resources/* test-output/artifacts/
+docker cp automatedtests:/opt/assignment/src/main/resources/  test-output/
 
 
 echo "Removing the containers..."
