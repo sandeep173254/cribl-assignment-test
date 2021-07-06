@@ -68,3 +68,7 @@ Running the test automation suite is just as simple as calling a shell script. H
 1. Clone the project and cd into Project_directory (cribl-assignment-test)
 2. sh test.sh ( Run the shell script )
 3. Navigate to test-output folder for the test-results and artifacts
+
+OR
+
+You can also run it from Github CI -> Actions
