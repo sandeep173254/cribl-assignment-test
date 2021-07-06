@@ -9,7 +9,7 @@ FROM adoptopenjdk/openjdk11:ubi
 ###############################
 
 RUN mkdir -p /opt/assignment
-RUN mkdir -p /src/main/resources
+RUN mkdir -p /opt/assignment/src/main/resources
 
 
 COPY build/libs/CriblAssignment.jar /opt/assignment/CriblAssignment.jar
