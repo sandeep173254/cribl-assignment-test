@@ -16,7 +16,10 @@ public class TargetFileValidationTests {
 	private File target1_file;
 	private File target2_file;
 	private File input_file;
+	private int target1_count;
+	private int target2_count;
 	public static final String FILE_DIRECTORY = "/opt/assignment/src/main/resources/";
+	public static final int FILE_COUNT = 1000000;
 	FileOperations fo = new FileOperations();
 	
 	
@@ -52,11 +55,11 @@ public class TargetFileValidationTests {
 	{
 		System.out.print("\n*******Running Test Cases******");
 		System.out.print("\nVerifying file total count for both Targets");
-		int target1_count = fo.getFileCount(target1_file);
-		int target2_count = fo.getFileCount(target2_file);
+		target1_count = fo.getFileCount(target1_file);
+		target2_count = fo.getFileCount(target2_file);
 		int total_count = target1_count + target2_count;
 		
-		Assert.assertEquals(total_count, 1000000);
+		Assert.assertEquals(total_count, FILE_COUNT);
 	}
 	
 	
@@ -65,9 +68,7 @@ public class TargetFileValidationTests {
 	{
 		System.out.print("\nVerifying file splitting ranges for both Targets");
 		boolean fileSplittingWithinRange=false;
-		int target1_count = fo.getFileCount(target1_file);
-		int target2_count = fo.getFileCount(target2_file);
-		if((target1_count >=200000 && target1_count <= 700000) && (target2_count >=200000 && target2_count <= 700000))
+		if(fo.isTargetCountWithinRange(target1_count) && fo.isTargetCountWithinRange(target2_count))
 			fileSplittingWithinRange=true;
 		
 		Assert.assertTrue(fileSplittingWithinRange);
