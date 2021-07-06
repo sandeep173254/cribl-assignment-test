@@ -12,6 +12,7 @@ RUN mkdir -p /opt/assignment
 RUN mkdir -p /opt/assignment/src/main/resources
 
 
+
 COPY build/libs/CriblAssignment.jar /opt/assignment/CriblAssignment.jar
 COPY testng.xml /opt/assignment/testng.xml
 

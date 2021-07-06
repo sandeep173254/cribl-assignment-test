@@ -51,7 +51,7 @@ public class FileOperations {
 		try {
 			inputStream = new BufferedInputStream(new FileInputStream(fileName));
 			byte[] c = new byte[1024];
-	        int count = 1;
+	        int count = 0;
 	        int readChars = 0;
 	        boolean empty = true;
 	        while ((readChars = inputStream.read(c)) != -1) {
@@ -79,6 +79,7 @@ public class FileOperations {
 	{
 		boolean verifyFileDataMatches=true;
 		
+		
         try (BufferedReader bf1 = new BufferedReader(new FileReader(input_file));
              BufferedReader bf2 = new BufferedReader(new FileReader(output_file))) {
  
@@ -87,9 +88,7 @@ public class FileOperations {
                 {
                     
                     String line2=bf2.readLine();
-                    System.out.print("\nVerifying Line:"+line+" and Line:"+line2 );
                 	if (!line.equalsIgnoreCase(line2)) {
-                		System.out.print("Line "+line+" doesnot match"+line2);
                     	verifyFileDataMatches=false;
                         
                     }

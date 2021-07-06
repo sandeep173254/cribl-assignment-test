@@ -24,7 +24,12 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Application Setup Deployment And Teardown
+      - name: Application Setup Deployment And Teardown and Test Execution
         run: . ./test.sh
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v1
+        if: always()
+        with:
+          files: test-output/testng-results.xml
 
       
