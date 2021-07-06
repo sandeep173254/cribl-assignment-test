@@ -25,10 +25,10 @@ Verify data Input/Output
 Pre-Req: 
 Created the following docker images and published to dockerhub
 
-sandeep173254/assignment:test_nodeapp_target
-sandeep173254/assignment:test_nodeapp_splitter
-sandeep173254/assignment:test_nodeapp_agent
-sandeep173254/assignment:automatedtests1
+1. sandeep173254/assignment:test_nodeapp_target
+2. sandeep173254/assignment:test_nodeapp_splitter
+3. sandeep173254/assignment:test_nodeapp_agent
+4. sandeep173254/assignment:automatedtests1
 
 
 The test orchestrator (shell script test.sh) will take care of all the deployment setup / teardown for the tests.
