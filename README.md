@@ -22,6 +22,15 @@ Verify data Input/Output
 
 **Approach**
 
+Pre-Req: 
+Created the following docker images and published to dockerhub
+
+sandeep173254/assignment:test_nodeapp_target
+sandeep173254/assignment:test_nodeapp_splitter
+sandeep173254/assignment:test_nodeapp_agent
+sandeep173254/assignment:automatedtests1
+
+
 The test orchestrator (shell script test.sh) will take care of all the deployment setup / teardown for the tests.
 These are the steps performed in the test orchestrator:
 
@@ -58,3 +67,4 @@ Running the test automation suite is just as simple as calling a shell script. H
 
 1. Clone the project and cd into Project_directory (cribl-assignment-test)
 2. sh test.sh ( Run the shell script )
+3. Navigate to test-output folder for the test-results and artifacts
