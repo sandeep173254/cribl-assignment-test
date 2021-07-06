@@ -58,7 +58,7 @@ rm events.log
 
 echo "Starting automation test suite"
 
-docker exec automatedtests java -jar opt/assignment/CriblAssignment.jar opt/assignment/testng.xml
+docker exec automatedtests java -jar opt/assignment/CriblAssignment.jar opt/assignment/testng.xml || true
 
 
 
